@@ -14,7 +14,9 @@ class App extends Component {
       ...data,
     };
 
-    this.setState(prevState => ({ users: [...prevState.users, newUser] }));
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, newUser],
+    }));
   };
 
   render() {
