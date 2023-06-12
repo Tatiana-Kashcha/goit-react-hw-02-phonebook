@@ -14,9 +14,7 @@ class App extends Component {
       ...data,
     };
 
-    this.setState(prevState => ({
-      contacts: [...prevState.contacts, newUser],
-    }));
+    console.log(newUser);
   };
 
   render() {
@@ -26,8 +24,8 @@ class App extends Component {
         <ContactForm addUser={this.addUser} />
 
         <h2>Contacts</h2>
-        <Filter />
-        <ContactList />
+        {/* <Filter />
+        <ContactList /> */}
       </div>
     );
   }
