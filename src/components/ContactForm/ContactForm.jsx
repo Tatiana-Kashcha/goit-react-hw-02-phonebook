@@ -12,7 +12,7 @@ class ContactForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // this.props.addUser({ ...this.state });
+    this.props.addUser({ ...this.state });
 
     // this.props.closeForm();
   };
@@ -48,7 +48,7 @@ class ContactForm extends Component {
           />
         </label>
 
-        <button type="submit">Save</button>
+        <button type="submit">Add contact</button>
       </form>
     );
   }

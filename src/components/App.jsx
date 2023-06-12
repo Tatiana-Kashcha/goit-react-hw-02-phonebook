@@ -8,11 +8,20 @@ class App extends Component {
     filter: '',
   };
 
+  addUser = data => {
+    const newUser = {
+      id: nanoid(),
+      ...data,
+    };
+
+    this.setState(prevState => ({ users: [...prevState.users, newUser] }));
+  };
+
   render() {
     return (
       <div>
         <h1>Phonebook</h1>
-        <ContactForm />
+        <ContactForm addUser={this.addUser} />
 
         <h2>Contacts</h2>
         <Filter />
