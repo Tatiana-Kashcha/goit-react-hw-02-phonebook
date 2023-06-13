@@ -27,16 +27,17 @@ class App extends Component {
     }));
   };
 
-  handleCangeFilter = e => {
-    this.setState({ filter: e.target.value });
-  };
-
   searchUser = filter => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(element =>
         element.name.includes(filter)
       ),
     }));
+  };
+
+  handleCangeFilter = e => {
+    this.setState({ filter: e.target.value });
+    this.searchUser();
   };
 
   render() {
