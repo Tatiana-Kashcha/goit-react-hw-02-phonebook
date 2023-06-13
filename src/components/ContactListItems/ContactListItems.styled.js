@@ -8,6 +8,9 @@ export const Button = styled.button`
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 1px, rgba(0, 0, 0, 0.14) 0px 0px 1px,
     rgba(0, 0, 0, 0.2) 0px 1px 0px;
+  &:active {
+    background-color: rgb(99 149 241);
+  }
 `;
 
 export const Name = styled.p`
