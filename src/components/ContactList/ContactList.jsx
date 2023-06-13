@@ -1,6 +1,7 @@
 import { ContactListItems } from '../ContactListItems/ContactListItems';
+import * as s from './ContactList.styled';
 
-export const List = ({ data, deleteUser }) => {
+export const ContactList = ({ data, deleteUser }) => {
   return (
     <ul>
       {data.map(user => (

@@ -30,6 +30,7 @@ class App extends Component {
   };
 
   render() {
+    const { contacts } = this.state;
     return (
       <div>
         <h1>Phonebook</h1>
