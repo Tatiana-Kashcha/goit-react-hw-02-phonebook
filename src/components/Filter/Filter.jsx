@@ -1,4 +1,5 @@
 import * as s from './Filter.styled';
+import PropTypes from 'prop-types';
 
 export const Filter = ({ filter, handleCangeFilter }) => {
   return (
@@ -15,4 +16,9 @@ export const Filter = ({ filter, handleCangeFilter }) => {
       />
     </>
   );
+};
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  handleCangeFilter: PropTypes.func.isRequired,
 };
