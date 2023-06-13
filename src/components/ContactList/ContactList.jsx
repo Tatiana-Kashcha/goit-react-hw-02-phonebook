@@ -16,13 +16,11 @@ export const ContactList = ({ data, deleteUser }) => {
 
 ContactList.propTypes = {
   data: PropTypes.arrayOf(
-    PropTypes.object(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        number: PropTypes.string.isRequired,
-      }).isRequired
-    )
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }).isRequired
   ).isRequired,
   deleteUser: PropTypes.func.isRequired,
 };
