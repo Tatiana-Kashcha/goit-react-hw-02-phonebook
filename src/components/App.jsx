@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactForm from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
+import * as s from './App.styled';
 
 class App extends Component {
   state = {
@@ -60,14 +61,14 @@ class App extends Component {
     console.log(this.state); // щоб побачити nanoid()
 
     return (
-      <div>
+      <s.Container>
         <h1>Phonebook</h1>
         <ContactForm addUser={this.addUser} />
 
         <h2>Contacts</h2>
         <Filter filter={filter} handleCangeFilter={this.handleCangeFilter} />
         <ContactList data={searchUser} deleteUser={this.deleteUser} />
-      </div>
+      </s.Container>
     );
   }
 }

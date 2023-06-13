@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  width: 400px;
   padding: 10px;
   margin-top: 20px;
-  margin-bottom: 20px;
   border: 1px solid rgb(0, 0, 0);
   button {
     padding: 1px 4px;
