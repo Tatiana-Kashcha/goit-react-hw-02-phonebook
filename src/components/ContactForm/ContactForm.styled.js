@@ -5,7 +5,7 @@ export const Form = styled.form`
   padding: 10px;
   border: 1px solid rgb(0, 0, 0);
   button {
-    padding: 2px 6px;
+    padding: 1px 4px;
     border: 1px solid rgb(219, 216, 216);
     border-radius: 4px;
     cursor: pointer;

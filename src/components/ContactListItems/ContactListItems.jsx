@@ -1,12 +1,14 @@
+import * as s from './ContactListItems.styled';
+
 export const ContactListItems = ({
   user: { name, number, id },
   deleteUser,
 }) => {
   return (
     <>
-      <p>{name}</p>
-      <p>{number}</p>
-      <button onClick={() => deleteUser(id)}>Delete</button>
+      <s.Name>{name}:</s.Name>
+      <s.Number>{number}</s.Number>
+      <s.Button onClick={() => deleteUser(id)}>Delete</s.Button>
     </>
   );
 };
