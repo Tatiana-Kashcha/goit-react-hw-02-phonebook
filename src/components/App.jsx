@@ -16,6 +16,17 @@ class App extends Component {
       ...data,
     };
 
+    const { contacts } = this.state;
+
+    const isDuplicateUser = contacts.some(
+      contact => contact.name.toLowerCase() === data.name.toLowerCase()
+    );
+
+    if (isDuplicateUser) {
+      alert('This name is already in the contacts list.');
+      return;
+    }
+
     this.setState(prevState => ({
       contacts: [...prevState.contacts, newUser],
     }));
@@ -23,26 +34,25 @@ class App extends Component {
 
   deleteUser = id => {
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(element => element.id !== id),
-    }));
-  };
-
-  searchUser = filter => {
-    this.setState(prevState => ({
-      contacts: prevState.contacts.filter(element =>
-        element.name.includes(filter)
-      ),
+      contacts: prevState.contacts.filter(el => el.id !== id),
     }));
   };
 
   handleCangeFilter = e => {
     this.setState({ filter: e.target.value });
-    this.searchUser();
+  };
+
+  searchUser = () => {
+    const { contacts, filter } = this.state;
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
   };
 
   render() {
-    const { contacts, filter } = this.state;
-    console.log(this.state);
+    const { filter } = this.state;
+    const searchUser = this.searchUser();
+
     return (
       <div>
         <h1>Phonebook</h1>
@@ -50,7 +60,7 @@ class App extends Component {
 
         <h2>Contacts</h2>
         <Filter filter={filter} handleCangeFilter={this.handleCangeFilter} />
-        <ContactList data={contacts} deleteUser={this.deleteUser} />
+        <ContactList data={searchUser} deleteUser={this.deleteUser} />
       </div>
     );
   }
