@@ -4,8 +4,8 @@ export const ContactListItems = ({
 }) => {
   return (
     <>
-      <p>Name: {name}</p>
-      <p>Number: {number}</p>
+      <p>{name}</p>
+      <p>{number}</p>
       <button onClick={() => deleteUser(id)}>Delete</button>
     </>
   );

@@ -3,12 +3,12 @@ import * as s from './ContactList.styled';
 
 export const ContactList = ({ data, deleteUser }) => {
   return (
-    <ul>
+    <s.List>
       {data.map(user => (
-        <li key={user.id}>
+        <s.ListItems key={user.id}>
           <ContactListItems user={user} deleteUser={deleteUser} />
-        </li>
+        </s.ListItems>
       ))}
-    </ul>
+    </s.List>
   );
 };
