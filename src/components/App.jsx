@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import ContactForm from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
+import { Filter } from 'components/Filter/Filter';
 
 class App extends Component {
   state = {
@@ -26,15 +27,28 @@ class App extends Component {
     }));
   };
 
+  handleCangeFilter = e => {
+    this.setState({ filter: e.target.value });
+  };
+
+  searchUser = filter => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(element =>
+        element.name.includes(filter)
+      ),
+    }));
+  };
+
   render() {
-    const { contacts } = this.state;
+    const { contacts, filter } = this.state;
+    console.log(this.state);
     return (
       <div>
         <h1>Phonebook</h1>
         <ContactForm addUser={this.addUser} />
 
         <h2>Contacts</h2>
-        {/* <Filter /> */}
+        <Filter filter={filter} handleCangeFilter={this.handleCangeFilter} />
         <ContactList data={contacts} deleteUser={this.deleteUser} />
       </div>
     );
