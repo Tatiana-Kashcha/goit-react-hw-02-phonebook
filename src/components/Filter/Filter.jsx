@@ -1,8 +1,10 @@
+import * as s from './Filter.styled';
+
 export const Filter = ({ filter, handleCangeFilter }) => {
   return (
     <>
-      <p>Find contacts by name</p>
-      <input
+      <s.Description>Find contacts by name</s.Description>
+      <s.Input
         type="text"
         name="name"
         pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
